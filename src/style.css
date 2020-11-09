@@ -1,0 +1,8 @@
+.title {
+    color: limegreen;
+    background: orange;
+}
+
+.todo-list :checked {
+    text-decoration: none;
+}

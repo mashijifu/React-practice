@@ -1,6 +1,6 @@
 import {useState} from 'react';
-import Textbox from './Textbox.jsx';
-import Button from "./Button.jsx";
+import Textbox from './components/Textbox.jsx';
+import Button from "./components/Button.jsx";
 
 const FirstLesson = () => {
     const name="nob"

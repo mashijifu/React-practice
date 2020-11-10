@@ -1,0 +1,49 @@
+import {useState} from 'react'
+
+const Chat = () => {
+    const[input, setInput] = useState("")
+    const[messages, setMessages] = useState([
+        {user: "クロやぎ：", text: "こんにちは"},
+        {user: "シロやぎ：", text: "こんにちは"}
+    ])
+
+    console.log(messages)
+
+    const users =["クロやぎ", "シロやぎ"]
+
+    const submitByKuro = () => {
+        // setMessages([...messages, {user: "クロやぎ：", text: input}])
+        setMessages([...messages, {user: messages[0].user, text: input}])
+        setInput("")
+        
+    }
+
+    const submitByShiro = () => {
+        // setMessages([...messages, {user: "シロやぎ：", text: input}])
+        setMessages([...messages, {user: messages[1].user, text: input}])
+        setInput("")
+        
+    }
+
+    return (
+        <div className="box">
+            <h1>Chat App</h1>
+            <div>
+                {messages.map((message, index) => {
+                    return (
+                        <p key={index}>
+                            {message.user}{message.text}
+                        </p>
+
+                    )
+                })}
+            </div>
+            <input value={input} onChange={ (event) => {setInput(event.target.value)} } type="text"/>
+            <br />
+            <button onClick={submitByKuro}>クロやぎで送信</button>
+            <button onClick={submitByShiro}>シロやぎで送信</button>
+        </div>
+    )
+}
+
+export default Chat

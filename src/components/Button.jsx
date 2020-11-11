@@ -6,7 +6,7 @@ const Button = ({ whatColor, setColor }) => {
             style={{color: "white", backgroundColor: whatColor}}
             onClick={() => setColor(whatColor)}
         >
-            押してね!
+            色を変えます！
         </button>
     )
 }

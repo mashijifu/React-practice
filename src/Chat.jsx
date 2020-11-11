@@ -9,8 +9,6 @@ const Chat = () => {
 
     console.log(messages)
 
-    const users =["クロやぎ", "シロやぎ"]
-
     const submitByKuro = () => {
         // setMessages([...messages, {user: "クロやぎ：", text: input}])
         setMessages([...messages, {user: messages[0].user, text: input}])
@@ -31,7 +29,10 @@ const Chat = () => {
             <div>
                 {messages.map((message, index) => {
                     return (
-                        <p key={index}>
+                        <p 
+                        className={message.user==="クロやぎ" ? "message-box-kuro": "message-box-shiro"} 
+                        key={index}
+                        >
                             {message.user}{message.text}
                         </p>
 

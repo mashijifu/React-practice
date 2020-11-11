@@ -41,6 +41,12 @@ const TodoList = () => {
         )
     }
 
+    const deleteTodo = (i) => {
+        setTodos([
+            // todos.splice(i, 1)
+        ])
+    }
+ 
     return (
         <>
             <h1>To Do List
@@ -63,7 +69,8 @@ const TodoList = () => {
                                 checked={task.checked}
                                 onClick={() => ToggleCheckbox(index)}
                             />
-                            {task.todo}
+                            <span>{task.todo}</span>
+                            <button onClick={(index) => deleteTodo(index)}>×</button>
                         </li>
 
                     )

@@ -3,6 +3,63 @@
     background: orange;
 }
 
-.todo-list :checked {
-    text-decoration: none;
+input:checked ~ span {
+	color: gray;
+	text-decoration: line-through;
+}
+
+.box {
+	border: 1px solid black;
+	padding: 8px;
+	margin: 8px;
+}
+
+.flex {
+	display: flex;
+}
+
+.message-box-kuro {
+	position: relative;
+	width: 300px;
+	margin: 1.5em 0 1.5em 15px;
+	padding: 20px;
+	min-width: 120px;
+	max-width: 100%;
+	color: #555;
+	font-size: 16px;
+	background: #e0edff;
+	border-radius: 12px;
+}
+
+.message-box-kuro:before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: -30px;
+	margin-top: -15px;
+	border: 15px solid transparent;
+	border-right: 15px solid #e0edff;
+}
+
+.message-box-shiro {
+	position: relative;
+	width: 300px;
+	margin: 1.5em 0 1.5em 15px;
+	padding: 20px;
+	min-width: 120px;
+	max-width: 100%;
+	color: #555;
+	font-size: 16px;
+	background: #e0edff;
+	border-radius: 12px;
+}
+
+.message-box-shiro:before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: -30px;
+	margin-top: -15px;
+	border: 15px solid transparent;
+	border-right: 15px solid #e0edff;
 }

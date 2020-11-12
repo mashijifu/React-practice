@@ -1,7 +1,7 @@
 import React, {useState, useContext, useEffect} from 'react'
-import Parent from './components/Parent.jsx'
-import Button from './components/Button.jsx'
-import Context from './Context.jsx'
+import Parent from '../components/Parent.jsx'
+import Button from '../components/Button.jsx'
+import Context from '../Context.jsx'
 
 const SecondLesson = () => {
     const [color, setColor] = useState("red")

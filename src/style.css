@@ -1,7 +1,13 @@
 .title {
-    color: limegreen;
-    background: orange;
+	text-align: center;
+	color: limegreen;
+	background-color: orange;
+	border-radius: 12px;
 }
+
+/* p {
+  font-size: 46px;
+} */
 
 input:checked ~ span {
 	color: gray;
@@ -18,9 +24,14 @@ input:checked ~ span {
 	display: flex;
 }
 
+/* .checked {
+color: gray;
+text-decoration: line-through ;
+} */
+
 .message-box-kuro {
-	position: relative;
 	width: 300px;
+	position: relative;
 	margin: 1.5em 0 1.5em 15px;
 	padding: 20px;
 	min-width: 120px;
@@ -41,25 +52,25 @@ input:checked ~ span {
 	border-right: 15px solid #e0edff;
 }
 
-.message-box-shiro {
-	position: relative;
+.message-box-siro {
 	width: 300px;
-	margin: 1.5em 0 1.5em 15px;
+	position: relative;
+	margin: 1.5em 15px 1.5em 0;
 	padding: 20px;
 	min-width: 120px;
 	max-width: 100%;
 	color: #555;
 	font-size: 16px;
-	background: #e0edff;
+	background: papayawhip;
 	border-radius: 12px;
 }
 
-.message-box-shiro:before {
+.message-box-siro:before {
 	content: '';
 	position: absolute;
 	top: 50%;
-	left: -30px;
+	left: 100%;
 	margin-top: -15px;
 	border: 15px solid transparent;
-	border-right: 15px solid #e0edff;
+	border-left: 15px solid papayawhip;
 }

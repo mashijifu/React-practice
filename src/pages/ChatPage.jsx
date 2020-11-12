@@ -1,24 +1,24 @@
 import {useState} from 'react'
 
-const Chat = () => {
+const ChatPage = () => {
     const[input, setInput] = useState("")
     const[messages, setMessages] = useState([
-        {user: "クロやぎ：", text: "こんにちは"},
-        {user: "シロやぎ：", text: "こんにちは"}
+        {user: "クロやぎ", text: "こんにちは"},
+        {user: "シロやぎ", text: "こんにちは"}
     ])
 
     console.log(messages)
 
     const submitByKuro = () => {
-        // setMessages([...messages, {user: "クロやぎ：", text: input}])
-        setMessages([...messages, {user: messages[0].user, text: input}])
+        setMessages([...messages, {user: "クロやぎ", text: input}])
+        // setMessages([...messages, {user: messages[0].user, text: input}])
         setInput("")
         
     }
 
     const submitByShiro = () => {
-        // setMessages([...messages, {user: "シロやぎ：", text: input}])
-        setMessages([...messages, {user: messages[1].user, text: input}])
+        setMessages([...messages, {user: "シロやぎ", text: input}])
+        // setMessages([...messages, {user: messages[1].user, text: input}])
         setInput("")
         
     }
@@ -30,10 +30,10 @@ const Chat = () => {
                 {messages.map((message, index) => {
                     return (
                         <p 
-                        className={message.user==="クロやぎ" ? "message-box-kuro": "message-box-shiro"} 
+                        className={message.user==="クロやぎ" ? "message-box-kuro" : "message-box-siro"} 
                         key={index}
                         >
-                            {message.user}{message.text}
+                            {message.user} : {message.text}
                         </p>
 
                     )
@@ -47,4 +47,4 @@ const Chat = () => {
     )
 }
 
-export default Chat
+export default ChatPage

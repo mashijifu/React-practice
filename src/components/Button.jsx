@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Button = ({ whatColor, setColor }) => {
+const Button = ({ children, whatColor, setColor }) => {
     return (
         <button
             style={{color: "white", backgroundColor: whatColor}}
             onClick={() => setColor(whatColor)}
         >
-            色を変えます！
+            {children}
         </button>
     )
 }

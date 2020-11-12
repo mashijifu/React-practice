@@ -1,13 +1,8 @@
 import {useState} from 'react';
+import shortid from "shortid"
 
 const TodoList = () => {
-    const [todos, setTodos] = useState(
-        [
-            {todo: "洗濯", checked: false},
-            {todo: "食器洗い", checked: false},
-            {todo: "掃除機やる", checked: false},     
-        ]
-    )
+    const [todos, setTodos] = useState([])
 
     const [inputText, setInputText] = useState("")
 
@@ -18,33 +13,34 @@ const TodoList = () => {
             setTodos(
                 [
                     ...todos,
-                    {todo: todo, checked: false}
+                    {id: shortid.generate(), todo: todo, checked: false}
                 ]
             )
             setInputText("")
         }
     }
 
-    const ToggleCheckbox = (i) => {
+    const ToggleCheckbox = (id) => {
         // const newTodos = todos
         // newTodos[i].checked = !newTodos[i].checked
         // setTodos(newTodos)
 
         setTodos(
-            todos.map((task, index) => {
-                if(i === index) {
-                    return { todo: task.todo, checked: !task.checked}
+            todos.map((task) => {
+                if(id === task.id) {
+                    return { ...task, todo: task.todo, checked: !task.checked}
                 } else {
-                    return { todo: task.todo, checked: task.checked}
+                    // return { todo: task.todo, checked: task.checked}
+                    return task
                 }
             })
         )
     }
 
-    const deleteTodo = (i) => {
-        setTodos([
-            // todos.splice(i, 1)
-        ])
+    const deleteTodo = (id) => {
+        setTodos(
+            todos.filter((task) => task.id !== id)
+        )
     }
  
     return (
@@ -67,10 +63,10 @@ const TodoList = () => {
                             <input 
                                 type="checkbox"
                                 checked={task.checked}
-                                onClick={() => ToggleCheckbox(index)}
+                                onClick={() => ToggleCheckbox(task.id)}
                             />
                             <span>{task.todo}</span>
-                            <button onClick={(index) => deleteTodo(index)}>×</button>
+                            <button onClick={() => deleteTodo(task.id)}>×</button>
                         </li>
 
                     )

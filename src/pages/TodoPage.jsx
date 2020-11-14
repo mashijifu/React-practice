@@ -1,9 +1,9 @@
-import {useState} from 'react';
+import React, {useState} from 'react';
 import shortid from "shortid"
+import AddTodoBar from "../components/AddTodoBar.jsx"
 
-const TodoList = () => {
+const TodoPage = () => {
     const [todos, setTodos] = useState([])
-
     const [inputText, setInputText] = useState("")
 
     const addTodo = (todo) => {
@@ -21,16 +21,11 @@ const TodoList = () => {
     }
 
     const ToggleCheckbox = (id) => {
-        // const newTodos = todos
-        // newTodos[i].checked = !newTodos[i].checked
-        // setTodos(newTodos)
-
         setTodos(
             todos.map((task) => {
                 if(id === task.id) {
-                    return { ...task, todo: task.todo, checked: !task.checked}
+                    return { ...task, checked: !task.checked}
                 } else {
-                    // return { todo: task.todo, checked: task.checked}
                     return task
                 }
             })
@@ -44,28 +39,28 @@ const TodoList = () => {
     }
  
     return (
-        <>
-            <h1>To Do List
-            </h1>
+        <div className="box">
+            <h1>Todo App</h1>
 
-            <input 
+            <AddTodoBar addTodo={addTodo} />
+            {/* <input 
                 type="text"
                 value={inputText}
                 onChange={(e) => setInputText(e.target.value)}    
             />
 
-            <button onClick={() => addTodo(inputText)}>保存</button>
+            <button onClick={() => addTodo(inputText)}>追加</button> */}
 
             <ul style={{ listStyle: 'none' }}>
                 {todos.map((task, index) => {
                     return(
-                        <li key={index} className="todo-list">
+                        <li key={index} className={`${task.checked ? 'checked' : ''}`}>
                             <input 
                                 type="checkbox"
                                 checked={task.checked}
                                 onClick={() => ToggleCheckbox(task.id)}
                             />
-                            <span>{task.todo}</span>
+                            {task.todo}
                             <button onClick={() => deleteTodo(task.id)}>×</button>
                         </li>
 
@@ -74,8 +69,8 @@ const TodoList = () => {
                 })}
             </ul>
 
-        </>
+        </div>
     )
 }
 
-export default TodoList
+export default TodoPage

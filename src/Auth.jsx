@@ -4,23 +4,23 @@ import {Context} from "./Context"
 
 const Auth = ({children}) => {
     const user=useContext(Context)
-    // <>
-    //     {user ?
-    //         <>{children}</>
-    //         :
-    //         <Redirect to="/login" />
     
-    
-    //     }
-        
-    // </>
+    return (
+        <>
+            {user ?
+                <>{children}</>
+                :
+                <Redirect to="/login" />
+            } 
+        </>
+    )
 
 
-    if(user) {
-        return <>{children}</>
-    } else {
-        return <Redirect to="/login" />
-    }
+    // if(user) {
+    //     return <>{children}</>
+    // } else {
+    //     return <Redirect to="/login" />
+    // }
 }
 
 export default Auth

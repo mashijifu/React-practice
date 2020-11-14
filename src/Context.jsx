@@ -6,7 +6,14 @@ const ContextProvider = ({children}) => {
     const [user, setUser]=useState(false)
     const [color, setColor]=useState("red")
     return (
-        <Context.Provider value={[user, setUser]}>
+        <Context.Provider 
+            value={{
+                user,
+                setUser,
+                color: color,
+                setColor: setColor
+            }}
+        >
             {children}
         </Context.Provider>
     )

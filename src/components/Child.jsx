@@ -3,7 +3,7 @@ import {Context} from '../Context.jsx'
 
 const Child = React.memo(({name, color}) => {
     const [text, setText] = useState("子どもテキスト")
-    const [user, setUser] = useContext(Context)
+    const {user, setUser} = useContext(Context)
     // const user=useContext(Context)
       
     return (

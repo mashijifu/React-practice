@@ -2,7 +2,7 @@ import React, {useContext} from 'react'
 import {Context} from '../Context.jsx'
 
 const AdminPage = () => {
-    const [user, setUser] = useContext(Context)
+    const {user, setUser} = useContext(Context)
 
     return (
         <>

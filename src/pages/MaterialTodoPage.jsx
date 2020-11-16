@@ -3,6 +3,7 @@ import shortid from "shortid"
 import AddTodoBar from "../components/AddTodoBar.jsx"
 import ItemList from '../components/ItemList.jsx'
 
+
 const TodoPage = () => {
     const [todos, setTodos] = useState([])
     const [inputText, setInputText] = useState("")

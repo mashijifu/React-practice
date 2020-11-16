@@ -9,6 +9,7 @@ import ContextProvider from './Context.jsx'
 import AdminPage from './pages/AdminPage.jsx'
 import Auth from './Auth.jsx'
 import LoginPage from './pages/LoginPage.jsx'
+import MaterialTodoPage from './pages/MaterialTodoPage.jsx'
 import "./style.css";
 
 const App = () => {
@@ -18,12 +19,16 @@ const App = () => {
         <BrowserRouter>
             <ContextProvider>
                 <h1>TOP PAGE</h1>
-                <Link className="box" to="/">FirstLesson</Link>
-                <Link className="box" to="/todo">TodoApp</Link>
-                <Link className="box" to="/chat">ChatApp</Link>
-                <Link className="box" to="/class">ClassComponent</Link>
-                <Link className="box" to="/second">SecondLesson</Link>
-                <Link className="box" to="/admin">ログインページ</Link>
+                <div className="">
+                    <Link className="box" to="/">FirstLesson</Link>
+                    <Link className="box" to="/todo">TodoApp</Link>
+                    <Link className="box" to="/chat">ChatApp</Link>
+                    <Link className="box" to="/class">ClassComponent</Link>
+                    <Link className="box" to="/second">SecondLesson</Link>
+                    <Link className="box" to="/admin">ログインページ</Link>
+                    <Link className="box" to="/material">MaterialTodo</Link>
+
+                </div>
                 <Switch>
                     <Route exact path='/login' component={LoginPage} />
                     <Auth>
@@ -34,6 +39,7 @@ const App = () => {
                             <Route exact path='/class' component={ClassComponent} />
                             <Route exact path='/second' component={SecondLesson} />
                             <Route exact path='/admin' component={AdminPage} />
+                            <Route exact path='/material' component={MaterialTodoPage} />
                         </Switch>
                     </Auth>
                 </Switch>

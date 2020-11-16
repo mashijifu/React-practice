@@ -1,4 +1,6 @@
-import {useState} from 'react'
+import {useState, useEffect, useContext} from 'react'
+import {Context} from '../Context.jsx'
+import {useHistory} from 'react-router-dom'
 
 const ChatPage = () => {
     const[input, setInput] = useState("")
@@ -6,6 +8,7 @@ const ChatPage = () => {
         {user: "クロやぎ", text: "こんにちは"},
         {user: "シロやぎ", text: "こんにちは"}
     ])
+    const{user, setUser} = useContext(Context)
 
     console.log(messages)
 
@@ -22,6 +25,13 @@ const ChatPage = () => {
         setInput("")
         
     }
+
+    const history=useHistory()
+    useEffect(() => {
+        if(user) {
+            history.push("/login")
+        }
+    }, [])
 
     return (
         <div className="box">

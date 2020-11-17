@@ -6,7 +6,7 @@ const ItemList = ({todos, toggleCheckbox, deleteTodo}) => {
         <ul style={{ listStyle: 'none' }}>
             {todos.map((task, index) => {
                 return(
-                    <item 
+                    <Item 
                         key={index}
                         task={task}
                         toggleCheckbox={toggleCheckbox}

@@ -3,7 +3,7 @@ import {Redirect} from 'react-router-dom'
 import {Context} from "./Context"
 
 const Auth = ({children}) => {
-    const user=useContext(Context)
+    const {user}=useContext(Context)
     
     return (
         <>

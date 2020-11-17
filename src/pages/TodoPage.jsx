@@ -5,10 +5,9 @@ import ItemList from '../components/ItemList.jsx'
 
 const TodoPage = () => {
     const [todos, setTodos] = useState([])
-    const [inputText, setInputText] = useState("")
 
     const addTodo = (todo) => {
-        if(inputText === "") {
+        if(todo === "") {
             alert("Todoを入力してください")
         } else {
             setTodos(
@@ -17,7 +16,6 @@ const TodoPage = () => {
                     {id: shortid.generate(), todo: todo, checked: false}
                 ]
             )
-            setInputText("")
         }
     }
 

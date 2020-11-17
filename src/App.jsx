@@ -26,7 +26,7 @@ const App = () => {
                     <Link className="box" to="/class">ClassComponent</Link>
                     <Link className="box" to="/second">SecondLesson</Link>
                     <Link className="box" to="/admin">ログインページ</Link>
-                    <Link className="box" to="/material">MaterialTodo</Link>
+                    <Link className="box" to="/material">Material-UI Todo</Link>
 
                 </div>
                 <Switch>
